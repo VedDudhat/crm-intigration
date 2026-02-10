@@ -1,2 +1,3 @@
 from .ticket import TicketCreateRequest,TicketCreateResponse
 from .customer import CustomerCreateRequest,CustomerCreateResponse
+from .ai_assistant import CreateTicket,ViewTicket,CreateCustomer,ViewCustomer,SearchTicket,UpdateTicket

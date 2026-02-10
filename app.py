@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 import uvicorn
 import os
 from backend.routes.customer import router as customer_router
-# from backend.routes.ticket import router as ticket_router
+from backend.routes.ticket import router as ticket_router
 
 load_dotenv()
 app = FastAPI()
 app.include_router(customer_router)
-# app.include_router(ticket_router)
+app.include_router(ticket_router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,5 +31,6 @@ async def root():
 
 if __name__ == "__main__":
     uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
+
 
 
